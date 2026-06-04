@@ -462,7 +462,9 @@ const GEAR=[
 ];
 GEAR.forEach(s=>s.items.forEach((it,i)=>it.id=`${s.id}_${i}`));
 const GKEY='deso_gear_v1';
-let gstate=JSON.parse(localStorage.getItem(GKEY)||'{}');
+let gstate={};
+try{gstate=JSON.parse(localStorage.getItem(GKEY)||'{}');}catch(e){gstate={};}
+function saveGear(){try{localStorage.setItem(GKEY,JSON.stringify(gstate));}catch(e){}}
 function tagHtml(g){return g.map(t=>`<span class="tag t-${t}">${t==='crit'?'●':t==='jer'?'Jeremy':t==='jeremiah'?'Jeremiah':'Fish'}</span>`).join(' ');}
 function renderGear(){
   const wrap=document.getElementById('gear-sc');let total=0,done=0;
@@ -478,8 +480,8 @@ function renderGear(){
   document.getElementById('gov-c').textContent=`${done}/${total}`;
   document.getElementById('gov-b').style.width=pct+'%';
 }
-function toggleGear(id){gstate[id]=!gstate[id];localStorage.setItem(GKEY,JSON.stringify(gstate));renderGear();}
-function resetGear(){if(confirm('Uncheck all gear items?')){gstate={};localStorage.setItem(GKEY,JSON.stringify(gstate));renderGear();}}
+function toggleGear(id){gstate[id]=!gstate[id];saveGear();renderGear();}
+function resetGear(){if(confirm('Uncheck all gear items?')){gstate={};saveGear();renderGear();}}
 renderGear();
 </script>
 </body>
