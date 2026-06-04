@@ -99,6 +99,12 @@ input[type="checkbox"]{accent-color:var(--accent);cursor:pointer;flex-shrink:0;m
 .trail-use{font-size:12px;color:var(--tx2);margin-bottom:8px}
 .alink{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:var(--accent);text-decoration:none;border:0.5px solid var(--bdr2);border-radius:var(--r8);padding:5px 10px;transition:background .15s}
 .alink:hover{background:var(--bg1)}
+.tracks{padding:11px 14px;background:var(--bg1);border-top:0.5px solid var(--bdr)}
+.tracks .th{font-size:12px;font-weight:600;color:var(--tx0);display:flex;align-items:center;gap:6px;margin-bottom:9px}
+.tracks .tr{margin-bottom:9px}
+.tracks .tr:last-child{margin-bottom:0}
+.tracks .tl{font-size:11px;color:var(--tx2);margin-bottom:4px}
+.tracks .alink{width:100%}
 /* Buttons + progress */
 .btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--f);font-size:12px;color:var(--tx1);background:transparent;border:0.5px solid var(--bdr2);border-radius:var(--r8);padding:5px 10px;cursor:pointer;transition:background .15s}
 .btn:hover{background:var(--bg1)}
@@ -126,7 +132,6 @@ a.inl:hover{text-decoration:underline}
   <div class="tabs">
     <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">Overview</button>
     <button class="tab-btn" data-tab="itin" onclick="switchTab('itin')">Itineraries</button>
-    <button class="tab-btn" data-tab="trails" onclick="switchTab('trails')">AllTrails</button>
     <button class="tab-btn" data-tab="logistics" onclick="switchTab('logistics')">Logistics</button>
     <button class="tab-btn" data-tab="gear" onclick="switchTab('gear')">Gear</button>
   </div>
@@ -158,8 +163,8 @@ a.inl:hover{text-decoration:underline}
       <div class="opt-meta"><b>~24–26 mi</b> + side trips · Dicks Pass ×2 · out-and-back lollipop</div>
       <div class="opt-d">The fullest version — adds a base-camp layover day to fish Gilmore/Susie and explore Aloha. Best if fishing and savoring are the point.</div>
     </div>
-    <div class="opt rec">
-      <div class="opt-h"><span class="opt-t">2-Night / 3-Day</span><span class="tag t-rec">Recommended</span></div>
+    <div class="opt">
+      <div class="opt-h"><span class="opt-t">2-Night / 3-Day</span></div>
       <div class="opt-meta"><b>~24–26 mi</b> · ~5,200 ft gain · Dicks Pass ×2 · out-and-back lollipop</div>
       <div class="opt-d">The full loop done efficiently — cirque, the pass, Aloha, out. Returns to Eagle Falls (one car).</div>
     </div>
@@ -172,7 +177,7 @@ a.inl:hover{text-decoration:underline}
 
   <!-- ═══════════ ITINERARIES ═══════════ -->
   <div id="panel-itin" style="display:none">
-    <p class="body">Every option starts the same: night one in the <b>Dicks / Fontanillis cirque</b> to match your Zone 23 permit. The permit only governs the first night — you roam freely after.</p>
+    <p class="body">Every option starts the same: night one in the <b>Dicks / Fontanillis cirque</b> to match your Zone 23 permit. The permit only governs the first night — you roam freely after. Each option’s AllTrails tracks are listed in order at the bottom — tap to open and navigate offline.</p>
 
     <details>
       <summary><i class="ti ti-mountain lead"></i> 3-Night / 4-Day — the fullest<i class="ti ti-chevron-right chev"></i></summary>
@@ -197,11 +202,22 @@ a.inl:hover{text-decoration:underline}
           <div class="day-d">Back over Dicks Pass → past the cirque &amp; Velmas → Eagle Lake → trailhead.</div>
           <div class="camp"><i class="ti ti-flag"></i> Exit: Eagle Falls TH</div>
         </div>
+        <div class="tracks">
+          <div class="th"><i class="ti ti-map-2"></i> AllTrails tracks — in order</div>
+          <div class="tr">
+            <div class="tl">Days 1–2 &amp; 4 — full lollipop incl. Dicks Pass</div>
+            <a class="alink" href="https://www.alltrails.com/trail/us/california/eagle-falls-trailhead-to-middle-velma-lake-to-dicks-lake-to-suzie-lake" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Eagle Falls → Velma, Dicks &amp; Susie · 20.8 mi · 5,203 ft</a>
+          </div>
+          <div class="tr">
+            <div class="tl">Day 3 layover — Aloha &amp; Gilmore basin</div>
+            <a class="alink" href="https://www.alltrails.com/trail/us/california/lake-aloha-via-glen-alpine-trailhead" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Lake Aloha (basin map) · day-hike reference</a>
+          </div>
+        </div>
       </div>
     </details>
 
     <details open>
-      <summary><i class="ti ti-star lead"></i> 2-Night / 3-Day <span style="font-weight:500;color:var(--tx2);font-size:12px">(recommended)</span><i class="ti ti-chevron-right chev"></i></summary>
+      <summary><i class="ti ti-route lead"></i> 2-Night / 3-Day<i class="ti ti-chevron-right chev"></i></summary>
       <div class="sec-body">
         <div class="day">
           <div class="day-h"><span class="day-n">Day 1</span><span class="day-stat">~6 mi · +1,900 ft</span></div>
@@ -217,6 +233,17 @@ a.inl:hover{text-decoration:underline}
           <div class="day-h"><span class="day-n">Day 3</span><span class="day-stat">~10–11 mi</span></div>
           <div class="day-d">Morning at Aloha / Gilmore, then back over Dicks Pass → past the cirque &amp; Velmas → Eagle Lake → trailhead. Big exit day.</div>
           <div class="camp"><i class="ti ti-flag"></i> Exit: Eagle Falls TH</div>
+        </div>
+        <div class="tracks">
+          <div class="th"><i class="ti ti-map-2"></i> AllTrails tracks — in order</div>
+          <div class="tr">
+            <div class="tl">Whole route — incl. Dicks Pass</div>
+            <a class="alink" href="https://www.alltrails.com/trail/us/california/eagle-falls-trailhead-to-middle-velma-lake-to-dicks-lake-to-suzie-lake" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Eagle Falls → Velma, Dicks &amp; Susie · 20.8 mi · 5,203 ft</a>
+          </div>
+          <div class="tr">
+            <div class="tl">Day 2 add-on — Aloha spur</div>
+            <a class="alink" href="https://www.alltrails.com/trail/us/california/lake-aloha-via-glen-alpine-trailhead" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Lake Aloha (basin map) · spur reference</a>
+          </div>
         </div>
       </div>
     </details>
@@ -242,69 +269,31 @@ a.inl:hover{text-decoration:underline}
         <div class="day">
           <div class="box box-warning" style="margin:4px 0 0"><span class="bt">Shuttle setup</span>Stage a second car at Glen Alpine (~10 min by road from Eagle Falls) before you start, or pre-book a South Lake Tahoe taxi with a confirmed pickup time — don't rely on summoning an Uber from the trailhead.</div>
         </div>
+        <div class="tracks">
+          <div class="th"><i class="ti ti-map-2"></i> AllTrails tracks — in order</div>
+          <div class="tr">
+            <div class="tl">Days 1–2 — in over Dicks Pass to Aloha (follow outbound half)</div>
+            <a class="alink" href="https://www.alltrails.com/trail/us/california/eagle-falls-trailhead-to-middle-velma-lake-to-dicks-lake-to-suzie-lake" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Eagle Falls → Velma, Dicks &amp; Susie · 20.8 mi · 5,203 ft</a>
+          </div>
+          <div class="tr">
+            <div class="tl">Day 3 — exit to Glen Alpine (reverse direction)</div>
+            <a class="alink" href="https://www.alltrails.com/trail/us/california/lake-aloha-via-glen-alpine-trailhead" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Lake Aloha via Glen Alpine · 11.7 mi · 1,958 ft</a>
+          </div>
+        </div>
       </div>
     </details>
-  </div>
-
-  <!-- ═══════════ ALLTRAILS ═══════════ -->
-  <div id="panel-trails" style="display:none">
-    <p class="body">The relevant routes with hard numbers and direct AllTrails links. Download offline maps before you go — no signal past the highway.</p>
-
-    <div class="trail">
-      <div class="trail-t">Eagles Lake → Fontanillis Lake Loop</div>
-      <div class="trail-stats"><span class="chip"><b>10.5 mi</b></span><span class="chip"><b>2,506 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Out &amp; back</span></div>
-      <div class="trail-use"><b>Day 1 into the cirque</b> — shared by all three options (Eagle Lake → Velmas → Dicks/Fontanillis).</div>
-      <a class="alink" href="https://www.alltrails.com/trail/us/california/eagles-lake-to-fontanillis-lake-loop" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
-    </div>
-
-    <div class="trail">
-      <div class="trail-t">Granite, Dick's, Velma &amp; Eagle Lake Loop</div>
-      <div class="trail-stats"><span class="chip"><b>12.1 mi</b></span><span class="chip"><b>2,726 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Loop</span><span class="chip fishchip">Fishing</span></div>
-      <div class="trail-use">Bayview approach — smoother, more gradual grade to the same cirque lakes.</div>
-      <a class="alink" href="https://www.alltrails.com/trail/us/california/granite-lake-dicks-lake-velma-lake-and-eagle-lake-loop" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
-    </div>
-
-    <div class="trail">
-      <div class="trail-t">Eagle Falls → Middle Velma, Dicks &amp; Susie Lake</div>
-      <div class="trail-stats"><span class="chip"><b>20.8 mi</b></span><span class="chip"><b>5,203 ft</b> gain</span><span class="chip">Hard</span><span class="chip">Loop</span></div>
-      <div class="trail-use">Backbone of the <b>2-Night &amp; 3-Night</b> routes (add the Aloha leg). Crosses Dicks Pass.</div>
-      <a class="alink" href="https://www.alltrails.com/trail/us/california/eagle-falls-trailhead-to-middle-velma-lake-to-dicks-lake-to-suzie-lake" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
-    </div>
-
-    <div class="trail">
-      <div class="trail-t">Lake Aloha via Glen Alpine Trailhead</div>
-      <div class="trail-stats"><span class="chip"><b>11.7 mi</b></span><span class="chip"><b>1,958 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Out &amp; back</span></div>
-      <div class="trail-use">The <b>Shuttle</b> exit leg — Aloha/Gilmore down to Glen Alpine.</div>
-      <a class="alink" href="https://www.alltrails.com/trail/us/california/lake-aloha-via-glen-alpine-trailhead" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
-    </div>
-
-    <div class="trail">
-      <div class="trail-t">Middle Velma Lake</div>
-      <div class="trail-stats"><span class="chip"><b>8.9 mi</b></span><span class="chip"><b>2,181 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Out &amp; back</span></div>
-      <div class="trail-use">The shortest line into the Velma basin from Eagle Falls.</div>
-      <a class="alink" href="https://www.alltrails.com/trail/us/california/middle-velma-lake-trail--2" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
-    </div>
-
-    <div class="trail">
-      <div class="trail-t">Susie Lake</div>
-      <div class="trail-stats"><span class="chip"><b>8.8 mi</b></span><span class="chip"><b>1,548 ft</b> gain</span><span class="chip">Moderate</span><span class="chip star">★ 4.6</span><span class="chip">Out &amp; back</span></div>
-      <div class="trail-use">Your night-2 area on the 2-Night &amp; Shuttle — good trout fishing.</div>
-      <a class="alink" href="https://www.alltrails.com/trail/us/california/susie-lake" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
-    </div>
-
-    <div class="trail">
-      <div class="trail-t">Maggie's Peak, Eagle Lake &amp; Granite Lake</div>
-      <div class="trail-stats"><span class="chip"><b>9.1 mi</b></span><span class="chip"><b>2,877 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span></div>
-      <div class="trail-use">Optional acclimatization day hike if you arrive a day early.</div>
-      <a class="alink" href="https://www.alltrails.com/trail/us/california/maggie-s-peak-eagle-lake-granite-lake-loop" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
-    </div>
-
-    <div class="trail">
-      <div class="trail-t">Bayview &amp; Eagle Lake Trail Loop</div>
-      <div class="trail-stats"><span class="chip"><b>6.5 mi</b></span><span class="chip"><b>1,876 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Loop</span></div>
-      <div class="trail-use">Short shakeout loop from the alternate (Bayview) trailhead.</div>
-      <a class="alink" href="https://www.alltrails.com/trail/us/california/bayview-and-eagle-lake-trail-loop" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
-    </div>
+    <details>
+      <summary><i class="ti ti-plus lead"></i> Alternates &amp; add-ons<i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="tracks" style="border-top:none">
+          <div class="tr"><div class="tl">Gentler approach via Bayview (fishing-tagged loop)</div><a class="alink" href="https://www.alltrails.com/trail/us/california/granite-lake-dicks-lake-velma-lake-and-eagle-lake-loop" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Granite, Dick's, Velma &amp; Eagle Lake Loop · 12.1 mi · 2,726 ft</a></div>
+          <div class="tr"><div class="tl">Arrive-early acclimatization day hike</div><a class="alink" href="https://www.alltrails.com/trail/us/california/maggie-s-peak-eagle-lake-granite-lake-loop" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Maggie's Peak, Eagle Lake &amp; Granite Lake · 9.1 mi · 2,877 ft</a></div>
+          <div class="tr"><div class="tl">Short shakeout from Bayview TH</div><a class="alink" href="https://www.alltrails.com/trail/us/california/bayview-and-eagle-lake-trail-loop" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Bayview &amp; Eagle Lake Trail Loop · 6.5 mi · 1,876 ft</a></div>
+          <div class="tr"><div class="tl">Shortest line into the Velma basin</div><a class="alink" href="https://www.alltrails.com/trail/us/california/middle-velma-lake-trail--2" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Middle Velma Lake · 8.9 mi · 2,181 ft</a></div>
+          <div class="tr"><div class="tl">Night-2 area detail</div><a class="alink" href="https://www.alltrails.com/trail/us/california/susie-lake" target="_blank" rel="noopener"><i class="ti ti-map-pin"></i> Susie Lake · 8.8 mi · 1,548 ft</a></div>
+        </div>
+      </div>
+    </details>
   </div>
 
   <!-- ═══════════ LOGISTICS ═══════════ -->
@@ -387,7 +376,7 @@ a.inl:hover{text-decoration:underline}
 /* ─── Tabs ─── */
 function switchTab(t){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));
-  ['overview','itin','trails','logistics','gear'].forEach(p=>{
+  ['overview','itin','logistics','gear'].forEach(p=>{
     document.getElementById('panel-'+p).style.display = (p===t)?'':'none';
   });
 }
