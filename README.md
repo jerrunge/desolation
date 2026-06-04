@@ -1,2 +1,2 @@
-# desolation
-Desolation Wilderness backpacking plan — Jeremy &amp; Jeremiah, late June
+# Desolation
+Late-June backpacking plan with Jeremiah. Live: https://jerrunge.github.io/desolation/
