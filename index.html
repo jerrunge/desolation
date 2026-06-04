@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desolation Wilderness — Late June</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+:root {
+  --bg0:#ffffff;--bg1:#f4f3f0;--bg2:#eceae7;
+  --bg-danger:#FCEBEB;--bg-success:#EAF3DE;--bg-warning:#FAEEDA;--bg-info:#E6F1FB;
+  --tx0:#1a1a18;--tx1:#5f5e5a;--tx2:#888780;
+  --tx-danger:#791F1F;--tx-success:#27500A;--tx-warning:#633806;--tx-info:#0C447C;
+  --bdr:rgba(0,0,0,0.10);--bdr2:rgba(0,0,0,0.18);
+  --r8:8px;--r12:12px;--accent:#2474A6;
+  --f:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg0:#1e1e1c;--bg1:#2c2c2a;--bg2:#121210;
+    --bg-danger:#791F1F;--bg-success:#27500A;--bg-warning:#633806;--bg-info:#0C447C;
+    --tx0:#f0ede8;--tx1:#a8a69f;--tx2:#6e6c66;
+    --tx-danger:#F7C1C1;--tx-success:#C0DD97;--tx-warning:#FAC775;--tx-info:#B5D4F4;
+    --bdr:rgba(255,255,255,0.10);--bdr2:rgba(255,255,255,0.20);
+    --accent:#5AA9D6;
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--f);background:var(--bg2);color:var(--tx0);line-height:1.5;padding:2rem 1rem 4rem;min-height:100vh}
+.container{max-width:680px;margin:0 auto;background:var(--bg0);border-radius:var(--r12);padding:1.5rem;border:0.5px solid var(--bdr)}
+h1{font-size:20px;font-weight:600;color:var(--tx0);margin-bottom:2px}
+.sub{font-size:13px;color:var(--tx1);margin-bottom:1.25rem}
+.tag{font-size:10px;border-radius:4px;padding:2px 7px;white-space:nowrap;display:inline-block}
+.t-crit{background:var(--bg-danger);color:var(--tx-danger)}
+.t-jer{background:var(--bg-info);color:var(--tx-info)}
+.t-jeremiah{background:var(--bg-success);color:var(--tx-success)}
+.t-fish{background:var(--bg-warning);color:var(--tx-warning)}
+.t-rec{background:var(--accent);color:#fff;font-weight:600}
+/* Tabs */
+.tabs{display:flex;border-bottom:0.5px solid var(--bdr2);margin-bottom:1.25rem;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tab-btn{font-family:var(--f);font-size:13px;font-weight:500;color:var(--tx1);background:none;border:none;padding:8px 13px 9px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-0.5px;white-space:nowrap;transition:color .15s,border-color .15s}
+.tab-btn.active{color:var(--tx0);border-bottom-color:var(--accent)}
+.tab-btn:hover:not(.active){color:var(--tx0)}
+/* Sections (native details) */
+details{border:0.5px solid var(--bdr);border-radius:var(--r12);margin-bottom:10px;overflow:hidden}
+summary{display:flex;align-items:center;gap:10px;padding:11px 14px;cursor:pointer;user-select:none;background:var(--bg1);font-size:14px;font-weight:600;color:var(--tx0);list-style:none;transition:opacity .15s}
+summary::-webkit-details-marker{display:none}
+summary:hover{opacity:.8}
+summary .chev{margin-left:auto;color:var(--tx2);transition:transform .2s}
+details[open] summary .chev{transform:rotate(90deg)}
+summary i.lead{color:var(--accent);font-size:16px}
+.sec-body{padding:4px 0}
+/* Rows */
+.irow{display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-bottom:0.5px solid var(--bdr);transition:background .1s}
+.irow:last-child{border-bottom:none}
+.irow:hover{background:var(--bg1)}
+.irow label{cursor:pointer;flex:1;font-size:14px}
+.irow .note{display:block;font-size:11px;color:var(--tx2);margin-top:2px}
+input[type="checkbox"]{accent-color:var(--accent);cursor:pointer;flex-shrink:0;margin-top:4px;width:15px;height:15px}
+/* Day rows */
+.day{padding:11px 14px;border-bottom:0.5px solid var(--bdr)}
+.day:last-child{border-bottom:none}
+.day-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+.day-n{font-size:13px;font-weight:600;color:var(--tx0)}
+.day-stat{font-size:11px;color:var(--accent);font-weight:600}
+.day-d{font-size:13px;color:var(--tx1)}
+.day-d b{color:var(--tx0);font-weight:600}
+.camp{font-size:11px;color:var(--tx2);margin-top:3px}
+.camp i{font-size:12px;vertical-align:-1px}
+/* Callouts */
+.box{border-radius:var(--r8);padding:10px 13px;font-size:13px;margin-bottom:9px;border:0.5px solid transparent}
+.box .bt{font-weight:600;display:block;margin-bottom:2px;font-size:13px}
+.box-danger{background:var(--bg-danger);color:var(--tx-danger)}
+.box-warning{background:var(--bg-warning);color:var(--tx-warning)}
+.box-success{background:var(--bg-success);color:var(--tx-success)}
+.box-info{background:var(--bg-info);color:var(--tx-info)}
+@media(prefers-color-scheme:dark){.box-danger,.box-warning,.box-success,.box-info{opacity:.96}}
+/* Fact grid */
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bdr);border:0.5px solid var(--bdr);border-radius:var(--r12);overflow:hidden;margin-bottom:1.25rem}
+.fact{background:var(--bg0);padding:10px 13px}
+.fact .l{font-size:11px;color:var(--tx2);text-transform:uppercase;letter-spacing:.03em}
+.fact .v{font-size:13px;color:var(--tx0);font-weight:600;margin-top:2px}
+/* Option summary cards */
+.opt{border:0.5px solid var(--bdr);border-radius:var(--r12);padding:12px 14px;margin-bottom:9px}
+.opt.rec{border-color:var(--accent);border-width:1px}
+.opt-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px}
+.opt-t{font-size:14px;font-weight:600;color:var(--tx0)}
+.opt-meta{font-size:12px;color:var(--tx1);margin-bottom:4px}
+.opt-meta b{color:var(--accent)}
+.opt-d{font-size:13px;color:var(--tx1)}
+/* Trail cards */
+.trail{border:0.5px solid var(--bdr);border-radius:var(--r12);padding:12px 14px;margin-bottom:9px}
+.trail-t{font-size:14px;font-weight:600;color:var(--tx0);margin-bottom:6px}
+.trail-stats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:7px}
+.chip{font-size:11px;background:var(--bg1);color:var(--tx1);border-radius:6px;padding:3px 8px;border:0.5px solid var(--bdr)}
+.chip b{color:var(--tx0)}
+.chip.star{color:var(--tx-warning);background:var(--bg-warning);border-color:transparent;font-weight:600}
+.chip.fishchip{color:var(--tx-warning);background:var(--bg-warning);border-color:transparent}
+.trail-use{font-size:12px;color:var(--tx2);margin-bottom:8px}
+.alink{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:var(--accent);text-decoration:none;border:0.5px solid var(--bdr2);border-radius:var(--r8);padding:5px 10px;transition:background .15s}
+.alink:hover{background:var(--bg1)}
+/* Buttons + progress */
+.btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--f);font-size:12px;color:var(--tx1);background:transparent;border:0.5px solid var(--bdr2);border-radius:var(--r8);padding:5px 10px;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--bg1)}
+.prog-wrap{margin-bottom:1.1rem}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.prog-l{font-size:13px;color:var(--tx1)}
+.prog-c{font-size:13px;font-weight:600;color:var(--tx0)}
+.prog-bar{height:5px;background:var(--bdr);border-radius:9999px;overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:9999px;width:0%;transition:width .2s}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.1rem;align-items:center}
+.legend .ll{font-size:12px;color:var(--tx1)}
+p.body{font-size:13px;color:var(--tx1);margin-bottom:.9rem}
+p.body b{color:var(--tx0)}
+.foot{font-size:11px;color:var(--tx2);text-align:center;margin-top:1.5rem;line-height:1.6}
+a.inl{color:var(--accent);text-decoration:none}
+a.inl:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Desolation Wilderness — Late June</h1>
+  <p class="sub">Jeremy &amp; Jeremiah &nbsp;·&nbsp; Eagle Falls → Dicks / Fontanillis → Dicks Pass → Lake Aloha &nbsp;·&nbsp; 2–3 nights</p>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn" data-tab="itin" onclick="switchTab('itin')">Itineraries</button>
+    <button class="tab-btn" data-tab="trails" onclick="switchTab('trails')">AllTrails</button>
+    <button class="tab-btn" data-tab="logistics" onclick="switchTab('logistics')">Logistics</button>
+    <button class="tab-btn" data-tab="gear" onclick="switchTab('gear')">Gear</button>
+  </div>
+
+  <!-- ═══════════ OVERVIEW ═══════════ -->
+  <div id="panel-overview">
+    <p class="body">A granite-and-alpine-lakes loop out of Emerald Bay into the most dramatic core of Desolation. You sleep night one in the <b>Dicks / Fontanillis cirque</b> (your secured permit zone), cross <b>Dicks Pass</b> for the big views, and drop to iconic <b>Lake Aloha</b>. Three ways to run it depending on time and whether you want to shuttle.</p>
+
+    <div class="facts">
+      <div class="fact"><div class="l">Trailhead</div><div class="v">Eagle Falls, Emerald Bay (~6,600 ft)</div></div>
+      <div class="fact"><div class="l">Permit (secured)</div><div class="v">Zone 23 — Dicks · night 1</div></div>
+      <div class="fact"><div class="l">Drive from Pacifica</div><div class="v">~3.5–4 hr (~190 mi)</div></div>
+      <div class="fact"><div class="l">High point</div><div class="v">Dicks Pass ~9,380 ft</div></div>
+      <div class="fact"><div class="l">Distance</div><div class="v">12–26 mi (by option)</div></div>
+      <div class="fact"><div class="l">Best fishing</div><div class="v">Dicks · Fontanillis · Velmas · Susie · Gilmore</div></div>
+    </div>
+
+    <div class="box box-success"><span class="bt">Snow year is in your favor</span>2026 ran ~51% of normal and melting fast. The high country should be largely clear by late June — but <b>Dicks Pass (9,380 ft) is the one spot snow lingers</b>. Pack microspikes and confirm pass conditions with the LTBMU office the week before.</div>
+
+    <div class="box box-danger"><span class="bt">Bugs are the real boss</span>Late June in a freshly-melted basin = peak mosquito. Treat clothing with permethrin ahead of time and carry head nets. Non-negotiable.</div>
+
+    <div class="box box-warning"><span class="bt">No backcountry signal — and don't count on Uber</span>Marginal cell at the trailhead (line-of-sight to South Shore), <b>zero service</b> in the basins. Carry a satellite messenger (Garmin inReach or iPhone 14+ satellite) and leave your itinerary + exit time with David. Uber/Lyft run in town but are unreliable at the trailhead — pre-arrange transport.</div>
+
+    <div class="box box-info"><span class="bt">Fish the right lakes</span>Aloha is the scenery showstopper but a shallow dammed lake that fishes poorly. Put rod time into <b>Dicks, Fontanillis, the Velmas, Susie, and Gilmore</b> instead.</div>
+
+    <h1 style="font-size:15px;margin:1.4rem 0 .6rem">The three options</h1>
+    <div class="opt rec">
+      <div class="opt-h"><span class="opt-t">3-Day / 2-Night</span><span class="tag t-rec">Recommended</span></div>
+      <div class="opt-meta"><b>~24–26 mi</b> · ~5,200 ft gain · Dicks Pass ×2 · out-and-back lollipop</div>
+      <div class="opt-d">The full experience — cirque, the pass, Aloha, and a fishing morning. Returns to Eagle Falls (one car).</div>
+    </div>
+    <div class="opt">
+      <div class="opt-h"><span class="opt-t">2-Day / 1-Night</span></div>
+      <div class="opt-meta"><b>~12–13 mi</b> · ~1,900–2,500 ft gain · 1 night</div>
+      <div class="opt-d">Fast, light alpine overnight in the Dicks/Fontanillis cirque. Best if time is tight.</div>
+    </div>
+    <div class="opt">
+      <div class="opt-h"><span class="opt-t">Shuttle / Point-to-Point</span></div>
+      <div class="opt-meta"><b>~20–22 mi</b> · 2 nights · exit Glen Alpine · no Dicks Pass re-climb</div>
+      <div class="opt-d">Same highlights as the 3-day but a gentler one-way finish. Needs a second car staged at Glen Alpine (~10 min away) or a pre-booked taxi.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ ITINERARIES ═══════════ -->
+  <div id="panel-itin" style="display:none">
+    <p class="body">Every option starts the same: night one in the <b>Dicks / Fontanillis cirque</b> to match your Zone 23 permit. The permit only governs the first night — you roam freely after.</p>
+
+    <details open>
+      <summary><i class="ti ti-star lead"></i> Option B — 3-Day / 2-Night <span style="font-weight:500;color:var(--tx2);font-size:12px">(recommended)</span><i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="day">
+          <div class="day-h"><span class="day-n">Day 1</span><span class="day-stat">~6 mi · +1,900 ft</span></div>
+          <div class="day-d">Eagle Falls TH → Eagle Lake → Velma Lakes → <b>Dicks / Fontanillis cirque</b> (~8,400 ft). Steep granite climb onto the plateau. Afternoon: fish Dicks &amp; Fontanillis.</div>
+          <div class="camp"><i class="ti ti-tent"></i> Camp: Dicks or Fontanillis Lake (Zone 23)</div>
+        </div>
+        <div class="day">
+          <div class="day-h"><span class="day-n">Day 2</span><span class="day-stat">~7–8 mi</span></div>
+          <div class="day-d">Cirque → <b>Dicks Pass (~9,380 ft)</b> — the big-views day, north to the Velmas, south to Half Moon, Susie &amp; Aloha → descend to Susie → Heather → <b>Lake Aloha</b>. Fish Susie; side-trip Gilmore.</div>
+          <div class="camp"><i class="ti ti-tent"></i> Camp: Susie or Heather Lake (~7,800–7,900 ft)</div>
+        </div>
+        <div class="day">
+          <div class="day-h"><span class="day-n">Day 3</span><span class="day-stat">~10–11 mi</span></div>
+          <div class="day-d">Morning at Aloha / Gilmore, then back over Dicks Pass → past the cirque &amp; Velmas → Eagle Lake → trailhead. Big exit day.</div>
+          <div class="camp"><i class="ti ti-flag"></i> Exit: Eagle Falls TH</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="ti ti-clock-hour-4 lead"></i> Option A — 2-Day / 1-Night<i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="day">
+          <div class="day-h"><span class="day-n">Day 1</span><span class="day-stat">~6 mi · +1,900 ft</span></div>
+          <div class="day-d">Eagle Falls TH → Eagle Lake → Velma Lakes → <b>Dicks / Fontanillis cirque</b>. Settle in, fish both lakes, optional packless wander to Dicks Pass saddle for sunset views.</div>
+          <div class="camp"><i class="ti ti-tent"></i> Camp: Dicks or Fontanillis Lake (Zone 23)</div>
+        </div>
+        <div class="day">
+          <div class="day-h"><span class="day-n">Day 2</span><span class="day-stat">~6–7 mi</span></div>
+          <div class="day-d">Optional dawn climb toward <b>Dicks Pass</b> for the panorama, then retrace past the Velmas → Eagle Lake → trailhead.</div>
+          <div class="camp"><i class="ti ti-flag"></i> Exit: Eagle Falls TH</div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="ti ti-arrows-right-left lead"></i> Option C — Shuttle / Point-to-Point (2-Night)<i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="day">
+          <div class="day-h"><span class="day-n">Day 1</span><span class="day-stat">~6 mi · +1,900 ft</span></div>
+          <div class="day-d">Eagle Falls TH → Velma Lakes → <b>Dicks / Fontanillis cirque</b>. Fish Dicks &amp; Fontanillis.</div>
+          <div class="camp"><i class="ti ti-tent"></i> Camp: Dicks or Fontanillis Lake (Zone 23)</div>
+        </div>
+        <div class="day">
+          <div class="day-h"><span class="day-n">Day 2</span><span class="day-stat">~7–8 mi</span></div>
+          <div class="day-d">Cirque → <b>Dicks Pass</b> → Susie → Heather → <b>Lake Aloha</b>. Camp near Gilmore or Heather to set up the downhill exit.</div>
+          <div class="camp"><i class="ti ti-tent"></i> Camp: Heather / Susie or Gilmore Lake</div>
+        </div>
+        <div class="day">
+          <div class="day-h"><span class="day-n">Day 3</span><span class="day-stat">~5–6 mi · mostly downhill</span></div>
+          <div class="day-d">Susie / Heather → Gilmore Lake → <b>Glen Alpine TH</b>. No Dicks Pass re-climb — a gentle one-way finish.</div>
+          <div class="camp"><i class="ti ti-flag"></i> Exit: Glen Alpine TH (shuttle pickup)</div>
+        </div>
+        <div class="day">
+          <div class="box box-warning" style="margin:4px 0 0"><span class="bt">Shuttle setup</span>Stage a second car at Glen Alpine (~10 min by road from Eagle Falls) before you start, or pre-book a South Lake Tahoe taxi with a confirmed pickup time — don't rely on summoning an Uber from the trailhead.</div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ═══════════ ALLTRAILS ═══════════ -->
+  <div id="panel-trails" style="display:none">
+    <p class="body">The relevant routes with hard numbers and direct AllTrails links. Download offline maps before you go — no signal past the highway.</p>
+
+    <div class="trail">
+      <div class="trail-t">Eagles Lake → Fontanillis Lake Loop</div>
+      <div class="trail-stats"><span class="chip"><b>10.5 mi</b></span><span class="chip"><b>2,506 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Out &amp; back</span></div>
+      <div class="trail-use">Core of the <b>2-Day</b> option — Eagle Lake → Velmas → the Dicks/Fontanillis cirque.</div>
+      <a class="alink" href="https://www.alltrails.com/trail/us/california/eagles-lake-to-fontanillis-lake-loop" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
+    </div>
+
+    <div class="trail">
+      <div class="trail-t">Granite, Dick's, Velma &amp; Eagle Lake Loop</div>
+      <div class="trail-stats"><span class="chip"><b>12.1 mi</b></span><span class="chip"><b>2,726 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Loop</span><span class="chip fishchip">Fishing</span></div>
+      <div class="trail-use">2-Day variant via Bayview — the smoother, more gradual approach to the same lakes.</div>
+      <a class="alink" href="https://www.alltrails.com/trail/us/california/granite-lake-dicks-lake-velma-lake-and-eagle-lake-loop" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
+    </div>
+
+    <div class="trail">
+      <div class="trail-t">Eagle Falls → Middle Velma, Dicks &amp; Susie Lake</div>
+      <div class="trail-stats"><span class="chip"><b>20.8 mi</b></span><span class="chip"><b>5,203 ft</b> gain</span><span class="chip">Hard</span><span class="chip">Loop</span></div>
+      <div class="trail-use">Backbone of the <b>3-Day</b> route (add the Aloha leg). Crosses Dicks Pass.</div>
+      <a class="alink" href="https://www.alltrails.com/trail/us/california/eagle-falls-trailhead-to-middle-velma-lake-to-dicks-lake-to-suzie-lake" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
+    </div>
+
+    <div class="trail">
+      <div class="trail-t">Lake Aloha via Glen Alpine Trailhead</div>
+      <div class="trail-stats"><span class="chip"><b>11.7 mi</b></span><span class="chip"><b>1,958 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Out &amp; back</span></div>
+      <div class="trail-use">The <b>Shuttle</b> exit leg — Aloha/Gilmore down to Glen Alpine.</div>
+      <a class="alink" href="https://www.alltrails.com/trail/us/california/lake-aloha-via-glen-alpine-trailhead" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
+    </div>
+
+    <div class="trail">
+      <div class="trail-t">Middle Velma Lake</div>
+      <div class="trail-stats"><span class="chip"><b>8.9 mi</b></span><span class="chip"><b>2,181 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Out &amp; back</span></div>
+      <div class="trail-use">The shortest line into the Velma basin from Eagle Falls.</div>
+      <a class="alink" href="https://www.alltrails.com/trail/us/california/middle-velma-lake-trail--2" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
+    </div>
+
+    <div class="trail">
+      <div class="trail-t">Susie Lake</div>
+      <div class="trail-stats"><span class="chip"><b>8.8 mi</b></span><span class="chip"><b>1,548 ft</b> gain</span><span class="chip">Moderate</span><span class="chip star">★ 4.6</span><span class="chip">Out &amp; back</span></div>
+      <div class="trail-use">Your night-2 area on the 3-Day/Shuttle — good trout fishing.</div>
+      <a class="alink" href="https://www.alltrails.com/trail/us/california/susie-lake" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
+    </div>
+
+    <div class="trail">
+      <div class="trail-t">Maggie's Peak, Eagle Lake &amp; Granite Lake</div>
+      <div class="trail-stats"><span class="chip"><b>9.1 mi</b></span><span class="chip"><b>2,877 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span></div>
+      <div class="trail-use">Optional acclimatization day hike if you arrive a day early.</div>
+      <a class="alink" href="https://www.alltrails.com/trail/us/california/maggie-s-peak-eagle-lake-granite-lake-loop" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
+    </div>
+
+    <div class="trail">
+      <div class="trail-t">Bayview &amp; Eagle Lake Trail Loop</div>
+      <div class="trail-stats"><span class="chip"><b>6.5 mi</b></span><span class="chip"><b>1,876 ft</b> gain</span><span class="chip">Hard</span><span class="chip star">★ 4.8</span><span class="chip">Loop</span></div>
+      <div class="trail-use">Short shakeout loop from the alternate (Bayview) trailhead.</div>
+      <a class="alink" href="https://www.alltrails.com/trail/us/california/bayview-and-eagle-lake-trail-loop" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Open in AllTrails</a>
+    </div>
+  </div>
+
+  <!-- ═══════════ LOGISTICS ═══════════ -->
+  <div id="panel-logistics" style="display:none">
+    <details open>
+      <summary><i class="ti ti-car lead"></i> Drive &amp; access<i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="day"><div class="day-d"><b>Route:</b> Pacifica → I-280/I-580/I-205 → US-50 east through Placerville to South Lake Tahoe → CA-89 north ~10 mi along the lake to the Eagle Falls / Emerald Bay trailhead. ~3.5–4 hr (~190 mi).</div></div>
+        <div class="day"><div class="day-d"><b>Parking:</b> The Eagle Falls lot is small and fills early — arrive at first light or use the overflow along CA-89. Day-use parking fee applies (bring cash/card).</div></div>
+        <div class="day"><div class="day-d"><b>Glen Alpine</b> (shuttle exit) is ~10 min by road from Eagle Falls, off Fallen Leaf Lake Rd.</div></div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="ti ti-license lead"></i> Permit &amp; regulations<i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="day"><div class="day-d"><b>Zone 23 — Dicks (secured).</b> Desolation permits are tied to your <b>first night's</b> zone; after that you camp anywhere. Print it or keep it in the Recreation.gov app (offline).</div></div>
+        <div class="irow"><span style="font-size:14px"><b>Bear canister required</b> — not a bag. Hard rule in Desolation.</span></div>
+        <div class="irow"><span style="font-size:14px"><b>Campfires prohibited</b> — stove only.</span></div>
+        <div class="irow"><span style="font-size:14px">Max group size 12. Dogs on leash OK (but you've no dog along).</span></div>
+        <div class="day"><div class="day-d"><b>Walk-in / changes:</b> LTBMU Supervisor's Office, South Lake Tahoe, handles same-day permits &amp; questions.</div></div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="ti ti-antenna-bars-2 lead"></i> Connectivity &amp; rides<i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="day"><div class="day-d"><b>Cell:</b> a bar or two at the trailhead (line-of-sight across the lake, carrier-dependent), <b>none</b> in the basins. Treat the backcountry as fully off-grid.</div></div>
+        <div class="day"><div class="day-d"><b>Satellite:</b> carry a Garmin inReach or use iPhone 14+ Emergency SOS / Messages via satellite. Leave the itinerary + expected exit time with David.</div></div>
+        <div class="day"><div class="day-d"><b>Uber/Lyft:</b> run in South Lake Tahoe but unreliable at the trailhead. Don't make it your exit plan — pre-arrange the shuttle or run two cars.</div></div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="ti ti-fish lead"></i> Fishing<i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="day"><div class="day-d"><b>License:</b> CA sport fishing license required for both of you (16+). Buy online via CDFW; short-term licenses available — keep a screenshot offline.</div></div>
+        <div class="day"><div class="day-d"><b>Best water:</b> Dicks (rainbow), Fontanillis, the Velmas, Susie, and especially Gilmore. <b>Skip Aloha</b> — shallow, dammed, poor fishing.</div></div>
+        <div class="day"><div class="day-d"><b>Gear:</b> ultralight spinning rod with ½-oz spinners (Panther Martin, Mepps) or a Tenkara fly setup. Work the rocky drop-offs into deep water.</div></div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="ti ti-first-aid-kit lead"></i> Safety &amp; emergency<i class="ti ti-chevron-right chev"></i></summary>
+      <div class="sec-body">
+        <div class="day"><div class="day-d"><b>Hospital:</b> Barton Memorial Hospital, South Lake Tahoe.</div></div>
+        <div class="day"><div class="day-d"><b>Crux hazard:</b> Dicks Pass snow/ice on the north side early season — microspikes + an early start over the pass.</div></div>
+        <div class="day"><div class="day-d"><b>Altitude:</b> mild (max 9,380 ft), but Jeremiah's coming from Indiana — stage a night near the lake beforehand and ease into Day 1.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ═══════════ GEAR ═══════════ -->
+  <div id="panel-gear" style="display:none">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:1rem">
+      <button class="btn" onclick="resetGear()"><i class="ti ti-refresh"></i> Reset</button>
+    </div>
+    <div class="prog-wrap">
+      <div class="prog-top"><span class="prog-l">Packed</span><span class="prog-c" id="gov-c"></span></div>
+      <div class="prog-bar"><div class="prog-fill" id="gov-b"></div></div>
+    </div>
+    <div class="legend">
+      <span class="ll">Tags:</span>
+      <span class="tag t-crit">● Critical</span>
+      <span class="tag t-jer">Jeremy</span>
+      <span class="tag t-jeremiah">Jeremiah</span>
+      <span class="tag t-fish">Fishing</span>
+    </div>
+    <div id="gear-sc"></div>
+    <p class="body" style="margin-top:1rem;font-size:11px;color:var(--tx2)">Checks save to this device automatically.</p>
+  </div>
+
+  <div class="foot">
+    Desolation Wilderness plan · built for Jeremy &amp; Jeremiah · companion to the <a class="inl" href="https://jerrunge.github.io/sierra/">Sierra page</a><br>
+    Distances/elevations are planning approximations — verify conditions with the LTBMU the week of departure.
+  </div>
+
+</div>
+<script>
+/* ─── Tabs ─── */
+function switchTab(t){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));
+  ['overview','itin','trails','logistics','gear'].forEach(p=>{
+    document.getElementById('panel-'+p).style.display = (p===t)?'':'none';
+  });
+}
+
+/* ─── Gear checklist ─── */
+const GEAR=[
+  {id:'g1',title:'Permits & must-haves',icon:'ti-alert-triangle',items:[
+    {t:'Dicks (Zone 23) permit — printed + saved offline',g:['crit']},
+    {t:'Bear canister ×2 (REQUIRED in Desolation)',g:['crit']},
+    {t:'CA fishing license ×2 — screenshot offline',g:['crit','fish']},
+    {t:'Satellite messenger (inReach / iPhone 14+ satellite)',g:['crit']},
+    {t:'Microspikes ×2',g:['crit'],n:'Dicks Pass north side holds snow/ice early season'},
+    {t:'Head nets ×2',g:['crit'],n:'Peak mosquito season'},
+    {t:'Permethrin-treated clothing (treat in advance)',g:['crit']},
+    {t:'Water filter (Sawyer Squeeze / BeFree) + backup tabs',g:['crit']},
+  ]},
+  {id:'g2',title:'Pack & shelter',icon:'ti-backpack',items:[
+    {t:'Backpacking pack 50–65L ×2',g:['crit']},
+    {t:'2-person tent (freestanding) + footprint',g:['crit']},
+    {t:'Sleeping bag 20–30°F ×2',g:['crit'],n:'High-lake nights drop near freezing'},
+    {t:'Sleeping pad ×2',g:['crit']},
+    {t:'Inflatable pillow ×2',g:[]},
+    {t:'Tent/pad repair kit',g:[]},
+  ]},
+  {id:'g3',title:'Clothing & layers',icon:'ti-shirt',items:[
+    {t:'Rain shell ×2',g:['crit']},
+    {t:'Insulated puffy ×2',g:['crit'],n:'Cold mornings at the pass'},
+    {t:'Fleece / midlayer ×2',g:[]},
+    {t:'Merino base layers',g:[]},
+    {t:'Hiking pants + shorts',g:[]},
+    {t:'Broken-in boots / trail runners',g:['crit','jer'],n:'Jeremy — well worn-in for feet/SI'},
+    {t:'Hiking socks ×4 + sleep socks',g:[]},
+    {t:'Sun hat + beanie + light gloves',g:[]},
+    {t:'Camp sandals',g:[]},
+    {t:'Buff / neck gaiter',g:[]},
+  ]},
+  {id:'g4',title:'Kitchen & food',icon:'ti-soup',items:[
+    {t:'Canister stove + fuel',g:['crit']},
+    {t:'Pot + mug + spork ×2',g:[]},
+    {t:'Meals sized to fit the canister',g:['crit']},
+    {t:'Pasture-raised / bison jerky',g:[]},
+    {t:'Wild-caught salmon / sardine pouches',g:[]},
+    {t:'Organic nuts + dried fruit',g:[]},
+    {t:'LMNT electrolytes',g:[]},
+    {t:'Instant oatmeal + coffee',g:[]},
+    {t:'Collapsible bottles ×3–4',g:[]},
+    {t:'Trowel + TP (cathole kit)',g:[]},
+    {t:'Trash bag — pack it all out',g:[]},
+  ]},
+  {id:'g5',title:'Fishing kit',icon:'ti-fish',items:[
+    {t:'Ultralight rod + reel (or Tenkara) ×2',g:['fish']},
+    {t:'½-oz spinners — Panther Martin / Mepps',g:['fish']},
+    {t:'Small spoons + a few flies',g:['fish']},
+    {t:'Spare line + leaders',g:['fish']},
+    {t:'Forceps / pliers + small net',g:['fish']},
+  ]},
+  {id:'g6',title:'Health & meds',icon:'ti-first-aid-kit',items:[
+    {t:'Losartan — trip days + 2 buffer',g:['crit','jer']},
+    {t:'Amlodipine — trip days + 2 buffer',g:['crit','jer']},
+    {t:'Trekking poles',g:['crit','jer'],n:'SI joint support'},
+    {t:'First aid kit',g:['crit']},
+    {t:'Blister kit (Compeed / Leukotape)',g:[]},
+    {t:'Ibuprofen / Tylenol + antihistamine',g:[]},
+    {t:'Sunscreen SPF 50 + lip balm SPF',g:['crit']},
+    {t:'Altitude / headache OTC',g:[]},
+    {t:'Hand sanitizer + biodegradable soap',g:[]},
+  ]},
+  {id:'g7',title:'Navigation & electronics',icon:'ti-device-mobile',items:[
+    {t:'iPhone + offline maps (Gaia / CalTopo / onX)',g:['crit']},
+    {t:'Headlamp ×2 + spare batteries',g:['crit']},
+    {t:'Power bank 10–20k + USB-C cables',g:[]},
+    {t:'Printed topo backup',g:[]},
+    {t:'Camera / phone pouch',g:[]},
+  ]},
+  {id:'g8',title:'Admin & shuttle',icon:'ti-clipboard-check',items:[
+    {t:'Itinerary + exit time left with David',g:['crit']},
+    {t:'Glen Alpine shuttle car staged (if Option C)',g:[]},
+    {t:'Cash/card for trailhead parking',g:[]},
+    {t:'IDs ×2 + emergency contacts card',g:[]},
+    {t:'Arrive-early parking plan for Eagle Falls',g:[]},
+  ]},
+];
+GEAR.forEach(s=>s.items.forEach((it,i)=>it.id=`${s.id}_${i}`));
+const GKEY='deso_gear_v1';
+let gstate=JSON.parse(localStorage.getItem(GKEY)||'{}');
+function tagHtml(g){return g.map(t=>`<span class="tag t-${t}">${t==='crit'?'●':t==='jer'?'Jeremy':t==='jeremiah'?'Jeremiah':'Fish'}</span>`).join(' ');}
+function renderGear(){
+  const wrap=document.getElementById('gear-sc');let total=0,done=0;
+  wrap.innerHTML=GEAR.map(s=>{
+    const rows=s.items.map(it=>{
+      total++;const ck=!!gstate[it.id];if(ck)done++;
+      return `<div class="irow"><input type="checkbox" id="${it.id}" ${ck?'checked':''} onchange="toggleGear('${it.id}')">
+        <label for="${it.id}">${it.t} ${it.g.length?tagHtml(it.g):''}${it.n?`<span class="note">${it.n}</span>`:''}</label></div>`;
+    }).join('');
+    return `<details open><summary><i class="ti ${s.icon} lead"></i> ${s.title}<i class="ti ti-chevron-right chev"></i></summary><div class="sec-body">${rows}</div></details>`;
+  }).join('');
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById('gov-c').textContent=`${done}/${total}`;
+  document.getElementById('gov-b').style.width=pct+'%';
+}
+function toggleGear(id){gstate[id]=!gstate[id];localStorage.setItem(GKEY,JSON.stringify(gstate));renderGear();}
+function resetGear(){if(confirm('Uncheck all gear items?')){gstate={};localStorage.setItem(GKEY,JSON.stringify(gstate));renderGear();}}
+renderGear();
+</script>
+</body>
+</html>
